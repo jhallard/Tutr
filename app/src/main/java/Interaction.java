@@ -6,7 +6,7 @@ public class Interaction {
     public double interactions = 0;
     public Member person;
 
-    public Interaction(Member per){
+    public Interaction(Member per) {
         person = per;
         interactions = 1;
     }

@@ -6,7 +6,7 @@ public class Qualification {
     public String subject;
     public double skill; //0 = incompetant, 1 = proficient, 2 = advanced, 3 = expert
 
-    public Qualification(String sub, double sk){
+    public Qualification(String sub, double sk) {
         subject = sub;
         skill = sk;
     }
