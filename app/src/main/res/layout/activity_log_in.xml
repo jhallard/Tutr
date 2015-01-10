@@ -1,0 +1,65 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:id="@+id/container"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    tools:context="com.ucsc.teamtutor.tutr.LogIn" tools:ignore="MergeRootFrame"
+    style="@style/AppTheme"
+    android:padding="@dimen/activity_horizontal_margin">
+
+<EditText
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:id="@+id/EMAIL"
+android:background="@color/accent_material_dark"
+android:editable="true"
+android:elegantTextHeight="true"
+android:height="@dimen/abc_action_bar_default_height_material"
+android:hint="Email Address"
+android:layout_above="@+id/PASSWORD"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentEnd="true" />
+
+<EditText
+android:layout_width="wrap_content"
+android:layout_height="@dimen/abc_action_bar_default_height_material"
+android:inputType="textPassword"
+android:ems="10"
+android:id="@+id/PASSWORD"
+android:editable="true"
+android:hint="Password"
+android:height="@dimen/abc_action_bar_default_height_material"
+android:enabled="true"
+android:background="@color/accent_material_dark"
+android:layout_marginBottom="138dp"
+android:layout_alignParentBottom="true"
+android:layout_alignParentStart="true"
+android:layout_alignParentEnd="true" />
+
+<Button
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Login"
+android:id="@+id/ATTEMPT_LOGIN"
+android:layout_alignTop="@+id/PASSWORD"
+android:layout_alignParentStart="true"
+android:layout_marginTop="56dp"
+android:height="@dimen/abc_action_bar_default_height_material" />
+
+<Button
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Sign-up"
+android:id="@+id/SIGNUP"
+    android:height="@dimen/abc_action_bar_default_height_material"
+    android:layout_alignTop="@+id/ATTEMPT_LOGIN"
+    android:layout_toEndOf="@+id/ATTEMPT_LOGIN" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Can&apos;t Remember?"
+        android:id="@+id/button"
+        android:height="@dimen/abc_action_bar_default_height_material"
+        android:layout_alignTop="@+id/SIGNUP"
+        android:layout_toEndOf="@+id/SIGNUP" />
+
+</RelativeLayout>
