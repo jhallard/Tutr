@@ -10,6 +10,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
+import android.widget.Button;
+import android.widget.TextView;
 
 
 public class LogIn extends ActionBarActivity {
@@ -51,7 +53,9 @@ public class LogIn extends ActionBarActivity {
     /**
      * A placeholder fragment containing a simple view.
      */
-    public static class PlaceholderFragment extends Fragment {
+    public static class PlaceholderFragment extends Fragment implements View.OnClickListener{
+
+        View rootView;
 
         public PlaceholderFragment() {
         }
@@ -59,8 +63,22 @@ public class LogIn extends ActionBarActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_log_in, container, false);
+            rootView = inflater.inflate(R.layout.fragment_log_in, container, false);
+            //keeps track of the button
+            Button btn = (Button)rootView.findViewById(R.id.SIGNUP);
+            btn.setOnClickListener(this);
+
             return rootView;
+        }
+
+        @Override
+        public void onClick(View v) {
+            switch(v.getId()){
+                case R.id.SIGNUP:
+                    ((TextView)rootView.findViewById(R.id.SIGNUP)).setText("Completing Sign Up");
+                    break;
+
+            }
         }
     }
 }
