@@ -7,8 +7,7 @@
     <!-- This is the button style, with various quirks.  -->
     <style name="button" parent="@android:style/Widget.Button">
         <item name="android:gravity">center_vertical|center_horizontal</item>
-        <!-- Text color variable depending on state -->
-        <item name="android:textColor">#FFFFFFFF</item>
+        <item name="android:textColor">@color/green</item>
         <item name="android:textSize">30sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:background">@drawable/button</item>

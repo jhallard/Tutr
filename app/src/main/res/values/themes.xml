@@ -4,7 +4,7 @@
 <resources>
     <style name="GreenAndWhite" parent="android:style/Theme.Light">
         <item name="android:buttonStyle">@style/button</item>
-        <item name="android:textColorPrimary"></item>
+        <item name="android:textColorPrimary">@color/black</item>
         <item name="android:windowBackground">@color/white</item>
         <item name="android:colorBackgroundCacheHint">@color/white</item>
     </style>
