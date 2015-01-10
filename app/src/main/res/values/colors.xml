@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Colors for use in various views.  More can be added. Andrew H. Pometta 1/10/15 -->
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="green">#1a8e1f</color>
+    <color name="dark_green">#114f14</color>
+    <color name="red">#fa0012</color>
+    <color name="gray">#888888</color>
+</resources>

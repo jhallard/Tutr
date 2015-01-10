@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Theme, created by Andrew H. Pometta 1/10/15 -->
+<resources>
+    <style name="GreenAndWhite" parent="android:style/Theme.Light">
+        <item name="android:buttonStyle">@style/button</item>
+        <item name="android:textColorPrimary"></item>
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:colorBackgroundCacheHint">@color/white</item>
+    </style>
+
+</resources>
