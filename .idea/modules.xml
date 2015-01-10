@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Tutr.iml" filepath="$PROJECT_DIR$/Tutr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tutr_AppEngine/Tutr_AppEngine.iml" filepath="$PROJECT_DIR$/Tutr_AppEngine/Tutr_AppEngine.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
