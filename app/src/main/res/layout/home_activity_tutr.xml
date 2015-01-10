@@ -1,6 +1,36 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:id="@+id/container"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    tools:context=".HomeActivityTutr" tools:ignore="MergeRootFrame" >
+    tools:context=".HomeActivityTutr" tools:ignore="MergeRootFrame"
+    android:padding="@dimen/abc_action_bar_default_padding_material">
 
-</FrameLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Tutors Near You"
+        android:id="@+id/NEARBYTUTORS"
+        android:layout_below="@+id/searchView"
+        android:layout_centerHorizontal="true"
+        android:height="@dimen/abc_action_bar_default_height_material"
+        android:singleLine="false"
+        android:enabled="false"
+        android:gravity="center_vertical" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listView"
+        android:layout_below="@+id/NEARBYTUTORS"
+        android:layout_alignEnd="@+id/searchView" />
+
+    <SearchView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/searchView"
+        android:padding="@dimen/abc_action_bar_default_padding_material"
+        android:background="@color/accent_material_dark"
+        android:layout_alignTop="@+id/searchView"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true" />
+</RelativeLayout>
