@@ -31,6 +31,8 @@ public class LogIn extends ActionBarActivity {
                 EditText passwordField = (EditText) findViewById(R.id.PASSWORD);
                 String Email = emailField.getText().toString();
                 String Password = passwordField.getText().toString();
+
+                //need to compare with database
             }
         });
 
@@ -41,8 +43,7 @@ public class LogIn extends ActionBarActivity {
                 Fragment signUp = new PlaceholderFragment();
 
                 FragmentManager fm  = getFragmentManager();
-                FragmentTransaction transaction = fm.beginTransaction();
-                transaction.commit();
+                FragmentTransaction ft = fm.beginTransaction();
             }
         });
 
