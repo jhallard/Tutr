@@ -3,4 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools" tools:context=".HomeActivityTutr">
     <item android:id="@+id/action_settings" android:title="@string/action_settings"
         android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/MENU_MY_PROFILE"
+        android:title="@string/home_page_menu_my_profile"></item>
+    <item android:id="@+id/MENU_SIGN_OUT"
+        android:title="@string/home_page_menu_sign_out"></item>
 </menu>

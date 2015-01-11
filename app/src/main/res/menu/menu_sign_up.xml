@@ -3,4 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools" tools:context="com.ucsc.teamtutor.tutr.UI.SignUp">
     <item android:id="@+id/action_settings" android:title="@string/action_settings"
         android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/MENU_LOG_IN"
+        android:title="@string/sign_up_menu_log_in"></item>
+    <item android:id="@+id/MENU_ABOUT_TUTR"
+        android:title="@string/sign_up_menu_about_tutr" />
 </menu>

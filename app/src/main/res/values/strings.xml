@@ -16,10 +16,14 @@
     <string name="cant_remember_password_button">Forgot your password?</string>
     <string name="email">E-mail Address</string>
     <string name="password">Password</string>
-    <string name="title_activity_tutor_profile_page">TutorProfilePage</string>
-    <string name="title_activity_splash_screen"></string>
-    <string name="title_activity_sign_up"></string>
+    <string name="title_activity_tutor_profile_page">Tutor Profile</string>
+    <string name="title_activity_splash_screen">Tutr</string>
+    <string name="title_activity_sign_up">Tutr</string>
     <string name="log_in_menu_sign_up">Sign-Up</string>
     <string name="log_in_menu_about_tutr">About Tutr</string>
+    <string name="sign_up_menu_log_in">Login</string>
+    <string name="sign_up_menu_about_tutr">About Tutr</string>
+    <string name="home_page_menu_sign_out">Sign Out</string>
+    <string name="home_page_menu_my_profile">My Profile</string>
 
 </resources>
