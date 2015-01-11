@@ -16,6 +16,8 @@ import android.widget.ListView;
 import android.widget.ArrayAdapter;
 import android.content.Context;
 import android.widget.TextView;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 
 import com.ucsc.teamtutor.tutr.Model.FrontEndNode;
 import com.ucsc.teamtutor.tutr.Model.Student;
@@ -41,6 +43,13 @@ public class HomeActivityTutr extends ActionBarActivity {
         TutorAdapter adapter = new TutorAdapter(this, tutors);
         tutorList.setAdapter(adapter);
         adapter.addAll(tutors);
+
+        tutorList.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                //TODO move to profile page, perhaps even a specific one
+            }
+        });
     }
 
     public class TutorAdapter extends ArrayAdapter<Tutor>{
