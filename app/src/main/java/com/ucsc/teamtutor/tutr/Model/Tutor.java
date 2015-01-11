@@ -82,4 +82,33 @@ public class Tutor extends Member {
             qualifications.remove(toRemove);
         }
     }
+
+    //This function gets a short ArrayList of the top 3 subjects, or less if the tutor has less
+    //than that.
+    public ArrayList<Qualification> getTopThree(){
+        this.sortQualifications();
+        ArrayList<Qualification> topThree = new ArrayList<>(0);
+        for (int i = 0; i < qualifications.size() || i < 3; ++i){
+            Qualification pointer = qualifications.get(i);
+            Qualification tmp = new Qualification();
+            tmp.subject = pointer.subject;
+            tmp.skill = pointer.skill;
+            topThree.add(tmp);
+        }
+        return topThree;
+    }
+
+    //This function sorts qualifications in the qualifications ArrayList.
+    //Basic insertion sort is used - no need for more complicated algorithm.
+    private void sortQualifications(){
+        for (int i = 0; i < qualifications.size(); ++i){
+            for (int j = i + 1; j < qualifications.size(); ++j){
+                if (qualifications.get(j).skill > qualifications.get(i).skill){
+                    Qualification tmp = qualifications.get(i);
+                    qualifications.set(i, qualifications.get(j));
+                    qualifications.set(j, tmp);
+                }
+            }
+        }
+    }
 }
