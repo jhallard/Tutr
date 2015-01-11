@@ -11,7 +11,8 @@ public class Member {
     public String phone;
     public String skype;
     public String password;
-    public double[] GPS; //NOT IMPLEMENTED YET!!!!!
+    public double latitude;
+    public double longitude;
     public String bio = ""; //avoid null pointer exception
     private ArrayList<Member> friends = new ArrayList<>(0); //contains friends of this member
     private ArrayList<Interaction> interacted = new ArrayList<>(0);
@@ -19,11 +20,14 @@ public class Member {
     //Constructor
     //2 since skype is optional during creation
     public Member() { //because android excepts a default constructor to be written out....
+        super();
         name = "";
         email = "";
         password = "";
         phone = "";
         skype = ""; //we don't like null pointer exceptions do we?
+        latitude = 0.0;
+        longitude = 0.0;
     }
 
     public Member(String na, String em, String pass, String ph) {
@@ -32,6 +36,8 @@ public class Member {
         password = pass;
         phone = ph;
         skype = ""; //we don't like null pointer exceptions do we?
+        latitude = 0.0;
+        longitude = 0.0;
     }
 
     public Member(String na, String em, String pass, String sk, String ph) {
@@ -40,6 +46,8 @@ public class Member {
         password = pass;
         skype = sk;
         phone = ph;
+        latitude = 0.0;
+        longitude = 0.0;
     }
 
     //Methods

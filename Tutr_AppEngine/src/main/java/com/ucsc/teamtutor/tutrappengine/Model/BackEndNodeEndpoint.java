@@ -6,6 +6,16 @@ import com.google.api.server.spi.config.ApiNamespace;
 import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.DatastoreServiceFactory;
 import com.google.appengine.api.datastore.Entity;
+import com.google.appengine.api.datastore.Query.Filter;
+import com.google.appengine.api.datastore.Query.FilterPredicate;
+import com.google.appengine.api.datastore.Query.FilterOperator;
+import com.google.appengine.api.datastore.Query.CompositeFilter;
+import com.google.appengine.api.datastore.Query.CompositeFilterOperator;
+import com.google.appengine.api.datastore.Query;
+import com.google.appengine.api.datastore.PreparedQuery;
+import com.google.appengine.api.datastore.Key;
+import com.google.appengine.api.datastore.KeyFactory;
+
 
 import java.util.ArrayList;
 import java.util.logging.Logger;
@@ -52,7 +62,15 @@ public class BackEndNodeEndpoint {
     public static boolean createStudent(Student updated){
         // make sure that student exists in the database
         DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
-        Entity student = new Entity("Student", updated.email);
+        Key key = KeyFactory.createKey("Student", updated.email);
+        Entity student = null;
+        try {
+            student = datastore.get(key);
+        }catch(Exception e) {
+            student = new Entity("Student", updated.email);
+        }
+
+        new Entity("Students", updated.email);
         student.setProperty("email", updated.email);
         student.setProperty("fullname", updated.name);
         student.setProperty("joindate", "");
@@ -97,6 +115,15 @@ public class BackEndNodeEndpoint {
     public static boolean createTutor(Tutor updated){
         // make sure that the new student doesn't exist in the database,
         // then add the student and return true
+        DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+        Entity tutor = new Entity("Tutors", updated.email);
+        tutor.setProperty("Email", updated.email);
+        tutor.setProperty("FullName", updated.name);
+        tutor.setProperty("Password", updated.password);
+        tutor.setProperty("HourlyRate", updated.getPrice());
+        tutor.setProperty("Latitude", updated.latitude);
+        tutor.setProperty("Longitude", updated.longitude);
+        datastore.put(tutor);
         boolean success = false;
         return success;
     }
@@ -125,6 +152,24 @@ public class BackEndNodeEndpoint {
     @ApiMethod(name = "getNearestTutors")
     public static ArrayList<Tutor> getNearestTutors(String subject, double longitude, double latitude){
         //TODO find nearby tutors using gps finder
+        DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+
+        Filter priceFilter = new FilterPredicate("Price",FilterOperator.GREATER_THAN_OR_EQUAL, 40.0);
+
+        Query q = new Query("Tutors").setFilter(priceFilter);
+
+        PreparedQuery pq = datastore.prepare(q);
+
+
+        for (Entity result : pq.asIterable()) {
+            String name = (String) result.getProperty("FullName");
+            String email = (String) result.getProperty("Email");
+            double lon = (double) result.getProperty("Longitude");
+            double lat = (double) result.getProperty("Longitude");
+
+            Member mem = new Member();
+            Tutor tutor;
+        }
         ArrayList<Tutor> nearByTutors = null;
         return nearByTutors;
     }
