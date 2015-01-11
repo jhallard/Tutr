@@ -19,5 +19,7 @@
     <string name="title_activity_tutor_profile_page">TutorProfilePage</string>
     <string name="title_activity_splash_screen"></string>
     <string name="title_activity_sign_up"></string>
+    <string name="log_in_menu_sign_up">Sign-Up</string>
+    <string name="log_in_menu_about_tutr">About Tutr</string>
 
 </resources>

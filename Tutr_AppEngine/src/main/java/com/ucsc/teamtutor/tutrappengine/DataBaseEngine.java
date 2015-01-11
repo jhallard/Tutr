@@ -2,12 +2,15 @@ package com.ucsc.teamtutor.tutrappengine;
 
 import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.DatastoreServiceFactory;
-import com.ucsc.teamtutor.tutr.Model.Student;
-import com.ucsc.teamtutor.tutr.Model.Tutor;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import com.ucsc.teamtutor.tutrappengine.Model.*;
+
+//import com.ucsc.teamtutor.tutr.Model.Student;
+//import app.com.ucsc.teamtutor.tutr.Model.Tutor;
 
 
 /**
@@ -68,9 +71,9 @@ public class DataBaseEngine {
         return true;
     }
 
-    List<Tutor> GetNearestTutor(double latitude,double longitude)
+    ArrayList<Tutor> GetNearestTutor(double latitude,double longitude)
     {
-        List<Tutor> tutors = new List<Tutor>();
+        ArrayList<Tutor> tutors = new ArrayList<Tutor>();
 
 
         return tutors;

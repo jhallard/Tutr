@@ -27,8 +27,8 @@ public class LogIn extends ActionBarActivity {
                 //Pass in login data to check
                 EditText emailField = (EditText) findViewById(R.id.EMAIL);
                 EditText passwordField = (EditText) findViewById(R.id.PASSWORD);
-                emailField.setBackgroundColor(Color.parseColor("@color/teal"));
-                passwordField.setBackgroundColor(Color.parseColor("@color/teal"));
+//                emailField.setBackgroundColor(Color.parseColor("@color/teal"));
+//                passwordField.setBackgroundColor(Color.parseColor("@color/teal"));
                 String email = emailField.getText().toString();
                 String password = passwordField.getText().toString();
                 int signInSuccess = LogInVerification.checkSignIn(email, password);
