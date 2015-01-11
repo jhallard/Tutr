@@ -1,10 +1,12 @@
+package com.ucsc.teamtutor.tutr.Model;
+
 /**
  * Created by Andrew H. Pometta on 1/10/15.
  * This class is designed to ensure login information is correct, then logs them in.
  */
 public class LogInVerification {
 
-    static boolean checkSignIn(String email, String password){
+    public static boolean checkSignIn(String email, String password){
         if (!validEmail(email)) return false;
         return passInEmailInfo(email, password);
     }
@@ -13,7 +15,7 @@ public class LogInVerification {
      * The e-mail verify function checks if the e-mail is valid.   False returned if email no, true
      * returned if it is.  After this stage the email goes through existence check in the database.
      */
-    static boolean validEmail(String email){
+    public static boolean validEmail(String email){
         //If it doesn't contain at least
         if (!email.contains(".") || !email.contains("@")) return false;
         int at_loc = email.indexOf("@");

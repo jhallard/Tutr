@@ -1,4 +1,4 @@
-/**
+package com.ucsc.teamtutor.tutr.Model; /**
  * Created by HP on 1/9/2015.
  */
 
@@ -76,7 +76,7 @@ public class Member {
 
     public void addInteraction(Member person) {
         //ok scary looking loop here to check if the person has interacted with the other person yet
-        //look at Interaction.java to see how the Interaction object works
+        //look at com.ucsc.teamtutor.tutr.Model.Interaction.java to see how the com.ucsc.teamtutor.tutr.Model.Interaction object works
         //interacted is the name of the array
         for (int i = 0; i < interacted.size(); i++) {
             if (interacted.get(i).person.equals(person)) {

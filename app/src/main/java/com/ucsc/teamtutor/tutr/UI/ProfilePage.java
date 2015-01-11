@@ -1,9 +1,11 @@
-package com.ucsc.teamtutor.tutr;
+package com.ucsc.teamtutor.tutr.UI;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.ucsc.teamtutor.tutr.R;
 
 
 public class ProfilePage extends ActionBarActivity {

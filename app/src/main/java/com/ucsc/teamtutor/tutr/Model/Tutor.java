@@ -1,3 +1,5 @@
+package com.ucsc.teamtutor.tutr.Model;
+
 import java.util.ArrayList;
 
 /**

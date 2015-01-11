@@ -1,12 +1,13 @@
-package com.ucsc.teamtutor.tutr;
+package com.ucsc.teamtutor.tutr.UI;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.content.Intent;
-import android.os.Bundle;
 import android.os.Handler;
+
+import com.ucsc.teamtutor.tutr.R;
 
 
 public class SplashScreenActivity extends ActionBarActivity {

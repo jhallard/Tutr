@@ -1,21 +1,17 @@
-package com.ucsc.teamtutor.tutr;
+package com.ucsc.teamtutor.tutr.UI;
 
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.os.Build;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.EditText;
 import android.content.Intent;
+
+import com.ucsc.teamtutor.tutr.Model.LogInVerification;
+import com.ucsc.teamtutor.tutr.R;
+
 
 public class LogIn extends ActionBarActivity {
 

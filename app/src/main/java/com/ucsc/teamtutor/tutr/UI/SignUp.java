@@ -1,4 +1,4 @@
-package com.ucsc.teamtutor.tutr;
+package com.ucsc.teamtutor.tutr.UI;
 
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
@@ -8,6 +8,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.ucsc.teamtutor.tutr.Model.LogInVerification;
+import com.ucsc.teamtutor.tutr.R;
 
 
 public class SignUp extends ActionBarActivity {
@@ -22,7 +25,7 @@ public class SignUp extends ActionBarActivity {
             public void onClick(View v) {
                 EditText emailField = (EditText) findViewById(R.id.EMAIL);
                 String Email = emailField.getText().toString();
-                if(LogInVerification.validEmail(Email)) {
+                if (LogInVerification.validEmail(Email)) {
                     //TODO CREATE ACCOUNT HERE!@!@!@!@!
                     //BE SURE TO SIGN THEM IN SOMEWHERE
                     Intent toHome = new Intent(SignUp.this, HomeActivityTutr.class);

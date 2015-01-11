@@ -1,7 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:id="@+id/container"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    tools:context="com.ucsc.teamtutor.tutr.LogIn" tools:ignore="MergeRootFrame"
+    tools:context="com.ucsc.teamtutor.tutr.UI.LogIn" tools:ignore="MergeRootFrame"
     style="@style/AppTheme"
     android:padding="@dimen/activity_horizontal_margin">
 
