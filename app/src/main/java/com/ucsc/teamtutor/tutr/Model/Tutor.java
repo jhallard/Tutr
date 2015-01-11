@@ -31,6 +31,11 @@ public class Tutor extends Member {
     public Tutor(String na, String em, String ph) {
         super(na, em, ph);
     }
+
+    public Tutor (String na, String em, String ph, double rate){
+        super(na, em, ph);
+        hourlyRate = rate;
+    }
     //getters
     public double getHourlyRate() {return hourlyRate;}
 
