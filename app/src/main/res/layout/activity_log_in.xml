@@ -17,7 +17,8 @@ android:hint="Email Address"
     android:layout_alignParentTop="true"
     android:layout_alignParentStart="true"
     android:layout_alignEnd="@+id/PASSWORD"
-    android:autoText="false" />
+    android:autoText="false"
+    android:lines="@integer/max_input_lines" />
 
 <EditText
 android:layout_width="wrap_content"
