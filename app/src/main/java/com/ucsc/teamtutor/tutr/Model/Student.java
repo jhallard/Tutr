@@ -6,19 +6,27 @@ import java.util.ArrayList;
  * Created by HP on 1/10/2015.
  */
 public class Student extends Member {
+    /*SEAN IF YOU READ THIS:
+    Read the changes I made to the member class.
+    I have commented out classes, it isn't strictly necessary.  I may put it back in if we find
+      a way and time to actually read in classes.
+    Until then the Student is but a glorified Tutor.  Time interests.
+     */
     //variables
+    /*
     private ArrayList<String> classes = new ArrayList<>(0); //starts at 0 cause we have no classes
-
-    //constructor
-    public Student(String na, String em, String pass, String ph) {
-        super(na, em, pass, ph);
+    */
+    //constructors
+    public Student(String na, String em, String ph) {
+        super(na, em, ph);
     }
 
-    public Student(String na, String em, String pass, String sk, String ph) {
-        super(na, em, pass, sk, ph);
+    public Student(){
+        super();
     }
 
     //methods
+    /*
     public void retrieveClasses() {
         //THIS WILL BE CODED TO RETRIEVE CLASSES FROM PIAZZA
     }
@@ -36,4 +44,5 @@ public class Student extends Member {
     public ArrayList<String> getClasses() {
         return classes;
     }
+    */
 }

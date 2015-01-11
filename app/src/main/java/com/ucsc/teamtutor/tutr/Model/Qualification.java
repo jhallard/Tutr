@@ -12,4 +12,9 @@ public class Qualification {
         subject = sub;
         skill = sk;
     }
+
+    public Qualification(){
+        subject = "";
+        skill = 0;
+    }
 }
