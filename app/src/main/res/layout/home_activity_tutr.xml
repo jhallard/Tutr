@@ -10,7 +10,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Tutors Near You"
         android:id="@+id/NEARBYTUTORS"
-        android:layout_below="@+id/searchView"
+        android:layout_below="@+id/FIND_TUTORS"
         android:layout_centerHorizontal="true"
         android:height="@dimen/abc_action_bar_default_height_material"
         android:singleLine="false"
@@ -22,15 +22,18 @@
         android:layout_height="wrap_content"
         android:id="@+id/listView"
         android:layout_below="@+id/NEARBYTUTORS"
-        android:layout_alignEnd="@+id/searchView" />
+        android:layout_alignEnd="@+id/FIND_TUTORS"
+        android:clickable="false" />
 
     <SearchView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/searchView"
+        android:id="@+id/FIND_TUTORS"
         android:padding="@dimen/abc_action_bar_default_padding_material"
         android:background="@color/accent_material_dark"
-        android:layout_alignTop="@+id/searchView"
+        android:layout_alignTop="@+id/FIND_TUTORS"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:iconifiedByDefault="true"
+        android:queryHint="Enter a Subject" />
 </RelativeLayout>
