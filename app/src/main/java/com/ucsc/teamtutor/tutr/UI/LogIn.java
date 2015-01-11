@@ -38,13 +38,20 @@ public class LogIn extends ActionBarActivity {
                     LogIn.this.startActivity(toHome);
                     finish();
                 } else {
+                    //I couldn't use @color/<color>, I have to use hex values.  Otherwise
+                    //a runtime error occurs.  As well, I make the other teal, in case the user
+                    //fixes a mistake but makes a new one, they don't remain red after they have
+                    //been fixed.
                     //MAKE EMAIL FIELD RED
-                    if (signInSuccess == 1 || signInSuccess == 2)
-                        emailField.setBackgroundColor(Color.parseColor("@color/red"));
-                    else //MAKE PASSWORD FIELD RED
-                        if (signInSuccess == 3) {
-                            passwordField.setBackgroundColor(Color.parseColor("@color/red"));
-                        }
+                    if (signInSuccess == 1 || signInSuccess == 2) {
+                        emailField.setBackgroundColor(Color.parseColor("#fa0012"));
+                        passwordField.setBackgroundColor(Color.parseColor("#009688"));
+                    }
+                    //MAKE PASSWORD FIELD RED
+                    else if (signInSuccess == 3) {
+                            passwordField.setBackgroundColor(Color.parseColor("#fa0012"));
+                        emailField.setBackgroundColor(Color.parseColor("#009688"));
+                    }
                 }
             }
         });
