@@ -18,7 +18,9 @@ public class Member {
       there just in case.
     When the user logs in, the server creates and sends back a student/tutor object.  It's when
       the user logs out that said object is destroyed.
+    Read my changes in the Tutor and Student classes.
     I'm sorry, it's just a time thing.
+    -Andrew
      */
     //variables
     private String name;

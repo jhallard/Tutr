@@ -10,7 +10,7 @@ public class Student extends Member {
     Read the changes I made to the member class.
     I have commented out classes, it isn't strictly necessary.  I may put it back in if we find
       a way and time to actually read in classes.
-    Until then the Student is but a glorified Tutor.  Time interests.
+    Until then the Student is but a glorified Member.  Time interests.
      */
     //variables
     /*
