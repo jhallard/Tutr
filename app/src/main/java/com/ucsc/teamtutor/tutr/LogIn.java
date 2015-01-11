@@ -39,11 +39,7 @@ public class LogIn extends ActionBarActivity {
         Button signUp = (Button) findViewById(R.id.SIGNUP);
         signUp.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //bring up sign-up fragment
-                Fragment signUp = new PlaceholderFragment();
 
-                FragmentManager fm  = getFragmentManager();
-                FragmentTransaction ft = fm.beginTransaction();
             }
         });
 
@@ -54,11 +50,6 @@ public class LogIn extends ActionBarActivity {
             }
         });
 
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
-                    .commit();
-        }
     }
 
 
@@ -82,37 +73,5 @@ public class LogIn extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class PlaceholderFragment extends Fragment implements View.OnClickListener{
-
-        View rootView;
-
-        public PlaceholderFragment() {
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            rootView = inflater.inflate(R.layout.fragment_log_in, container, false);
-            //keeps track of the button
-            Button btn = (Button)rootView.findViewById(R.id.SIGNUP);
-            btn.setOnClickListener(this);
-
-            return rootView;
-        }
-
-        @Override
-        public void onClick(View v) {
-            switch(v.getId()){
-                case R.id.SIGNUP:
-                    ((TextView)rootView.findViewById(R.id.SIGNUP)).setText("Signing Up");
-                    break;
-
-            }
-        }
     }
 }

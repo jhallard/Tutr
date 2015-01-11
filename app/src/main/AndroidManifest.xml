@@ -30,7 +30,11 @@
             android:name=".SplashScreenActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_splash_screen"
-            android:theme="@style/FullscreenTheme" >
+            android:theme="@style/AppTheme" >
+        </activity>
+        <activity
+            android:name=".SignUp"
+            android:label="@string/title_activity_sign_up" >
         </activity>
     </application>
 
