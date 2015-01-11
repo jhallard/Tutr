@@ -43,7 +43,11 @@ public class LogInVerification {
     }
 
     private static int passInEmailInfo(String email, String password){
-        //dummy function until DB is up
-        return 0;
+        int res = FrontEndNode.verifyUserInfo(email, password);
+        if (res == 1) return 3;
+        else if (res == 2) return 2;
+        else if (res == 0) return 0;
+        //res should never be anything else
+        return 1;
     }
 }
