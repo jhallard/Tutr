@@ -1,12 +1,12 @@
-package com.ucsc.teamtutor.tutr.Model;
+package com.ucsc.teamtutor.tutrappengine.Model;
 
 import java.util.ArrayList;
 
 /**
- * Created by HP on 1/10/2015.
+ * Created by jhallard on 1/11/15.
  */
-public class FrontEndNode {
-    static LogInVerification verifier;
+public class BackEndNode {
+
     public static boolean updateStudent(Student updated){
         // make sure that student exists in the database
         boolean success = false;
@@ -59,4 +59,5 @@ public class FrontEndNode {
         Tutor tutor = null;
         return tutor;
     }
+    
 }

@@ -30,6 +30,7 @@ public class Member {
     private double latitude;
     private String bio = ""; //avoid null pointer exception
     /*
+
     private ArrayList<Member> friends = new ArrayList<>(0); //contains friends of this member
     private ArrayList<Interaction> interacted = new ArrayList<>(0);
     */
