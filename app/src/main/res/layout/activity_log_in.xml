@@ -14,11 +14,12 @@ android:editable="true"
 android:elegantTextHeight="true"
 android:height="@dimen/abc_action_bar_default_height_material"
 android:hint="Email Address"
-    android:layout_alignParentTop="true"
-    android:layout_alignParentStart="true"
-    android:layout_alignEnd="@+id/PASSWORD"
     android:autoText="false"
-    android:lines="@integer/max_input_lines" />
+    android:lines="@integer/max_input_lines"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentEnd="true"
+    android:layout_marginTop="54dp"
+    android:layout_alignParentStart="true" />
 
 <EditText
 android:layout_width="wrap_content"
