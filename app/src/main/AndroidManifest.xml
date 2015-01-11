@@ -26,6 +26,12 @@
             android:name=".TutorProfilePage"
             android:label="@string/title_activity_tutor_profile_page" >
         </activity>
+        <activity
+            android:name=".SplashScreenActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_splash_screen"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
     </application>
 
 </manifest>

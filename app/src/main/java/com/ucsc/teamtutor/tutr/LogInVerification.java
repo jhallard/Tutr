@@ -1,7 +1,7 @@
 package com.ucsc.teamtutor.tutr;
 
 /**
- * Created by andrew on 1/10/15.
+ * Created by Andrew H. Pometta on 1/10/15.
  * This class is designed to ensure login information is correct, then logs them in.
  */
 public class LogInVerification {
