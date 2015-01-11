@@ -22,6 +22,10 @@
             android:name=".LogIn"
             android:label="@string/title_activity_log_in" >
         </activity>
+        <activity
+            android:name=".TutorProfilePage"
+            android:label="@string/title_activity_tutor_profile_page" >
+        </activity>
     </application>
 
 </manifest>

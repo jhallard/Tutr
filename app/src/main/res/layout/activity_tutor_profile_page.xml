@@ -1,0 +1,83 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:id="@+id/NAME"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    tools:context="com.ucsc.teamtutor.tutr.TutorProfilePage" tools:ignore="MergeRootFrame" >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/PROFILE_PIC"
+        android:maxWidth="64dp"
+        android:maxHeight="64dp"
+        android:src="@drawable/avatar_default"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Sammy Slug"
+        android:id="@+id/TUTOR_NAME"
+        android:layout_alignParentTop="true"
+        android:layout_alignBottom="@+id/PROFILE_PIC"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/PROFILE_PIC"
+        android:singleLine="false"
+        android:password="false" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Subjects: Math, Calc"
+        android:id="@+id/SUBJECTS"
+        android:layout_below="@+id/PROFILE_PIC"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Hourly Rate: $5"
+        android:id="@+id/CHARGE"
+        android:layout_below="@+id/SUBJECTS"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Hours: 20:00-22:00"
+        android:id="@+id/TUTOR_HOURS"
+        android:layout_below="@+id/CHARGE"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Bio: I like food."
+        android:id="@+id/TUTOR_BIO"
+        android:layout_below="@+id/TUTOR_HOURS"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contact this user."
+        android:id="@+id/TUTOR_CONTACT_BUTTON"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Request phone number."
+        android:id="@+id/TUTOR_REQUEST_BUTTON"
+        android:layout_above="@+id/TUTOR_CONTACT_BUTTON"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+</RelativeLayout>

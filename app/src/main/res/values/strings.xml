@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- For proper coding practice - and to avoid that annoying warning that you should use an
+    <!--
+     For proper coding practice - and to avoid that annoying warning that you should use an
      @string resource all the damn time - here comes a big list of string resources that pretty
-     much pop up all over the app. -Andrew H. Pometta -->
+     much pop up all over the app. -Andrew H. Pometta
+    -->
     <string name="app_name">Tutr</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
@@ -14,4 +16,6 @@
     <string name="cant_remember_password_button">Forgot your password?</string>
     <string name="email">E-mail Address</string>
     <string name="password">Password</string>
+    <string name="title_activity_tutor_profile_page">TutorProfilePage</string>
+
 </resources>
