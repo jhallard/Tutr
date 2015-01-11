@@ -1,13 +1,15 @@
 import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.DatastoreServiceFactory;
+import com.ucsc.teamtutor.tutr.Model.Student;
+
 import java.util.Arrays;
 import java.util.List;
 
-package com.ucsc.teamtutor.tutrappengine;
-package com.ucsc.teamtutor.tutr;
+
 /**
  * Created by Alec Reid on 1/10/2015.
  */
+package com.ucsc.teamtutor.tutrappengine;
 public class DataBaseEngine {
     private List<String> subjectList;
     DataBaseEngine()
