@@ -32,8 +32,12 @@ public class LogIn extends ActionBarActivity {
                 EditText passwordField = (EditText) findViewById(R.id.PASSWORD);
                 String Email = emailField.getText().toString();
                 String Password = passwordField.getText().toString();
-
-                //need to compare with database
+                if(LogInVerification.checkSignIn(Email, Password)) {
+                    //BE SURE TO SIGN THEM IN SOMEWHERE
+                    Intent toHome = new Intent(LogIn.this, HomeActivityTutr.class);
+                    LogIn.this.startActivity(toHome);
+                    finish();
+                }
             }
         });
 

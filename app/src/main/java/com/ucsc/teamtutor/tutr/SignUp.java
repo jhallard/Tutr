@@ -1,9 +1,13 @@
 package com.ucsc.teamtutor.tutr;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 
 public class SignUp extends ActionBarActivity {
@@ -12,7 +16,23 @@ public class SignUp extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+
+        Button goButton = (Button) findViewById(R.id.SIGNUP);
+        goButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                EditText emailField = (EditText) findViewById(R.id.EMAIL);
+                String Email = emailField.getText().toString();
+                if(LogInVerification.validEmail(Email)) {
+                    //TODO CREATE ACCOUNT HERE!@!@!@!@!
+                    //BE SURE TO SIGN THEM IN SOMEWHERE
+                    Intent toHome = new Intent(SignUp.this, HomeActivityTutr.class);
+                    SignUp.this.startActivity(toHome);
+                    finish();
+                }
+            }
+        });
     }
+
 
 
     @Override
