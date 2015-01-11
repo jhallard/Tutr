@@ -7,6 +7,8 @@ buildscript {
     }
     dependencies {
         classpath 'com.google.appengine:gradle-appengine-plugin:1.9.14'
+        classpath 'com.googlecode.objectify:objectify:5.0.3'
+
     }
 }
 
@@ -26,6 +28,7 @@ dependencies {
     compile 'com.google.appengine:appengine-endpoints:1.9.14'
     compile 'com.google.appengine:appengine-endpoints-deps:1.9.14'
     compile 'javax.servlet:servlet-api:2.5'
+    compile 'com.googlecode.objectify:objectify:5.0.3'
 }
 
 appengine {
