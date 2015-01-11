@@ -10,7 +10,7 @@ public class Member {
     public String email; //this will also be login name
     public String phone;
     public String skype;
-    private String password;
+    public String password;
     public double[] GPS; //NOT IMPLEMENTED YET!!!!!
     public String bio = ""; //avoid null pointer exception
     private ArrayList<Member> friends = new ArrayList<>(0); //contains friends of this member
