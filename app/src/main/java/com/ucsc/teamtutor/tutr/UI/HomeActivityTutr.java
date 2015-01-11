@@ -1,5 +1,7 @@
 package com.ucsc.teamtutor.tutr.UI;
 
+
+
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -10,16 +12,30 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
+import android.widget.ListView;
 
+import com.ucsc.teamtutor.tutr.Model.FrontEndNode;
+import com.ucsc.teamtutor.tutr.Model.Student;
+import com.ucsc.teamtutor.tutr.Model.Tutor;
 import com.ucsc.teamtutor.tutr.R;
+
+import java.util.ArrayList;
 
 
 public class HomeActivityTutr extends ActionBarActivity {
 
+    //I need a way to access the student's data.  For that I need a student object.  I don't know
+    //how to ge that yet so I'm putting in this dummy.
+    Student example = new Student();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_activity_tutr);
+
+        ListView tutorList = (ListView) findViewById (R.id.TUTORS);
+        ArrayList<Tutor> tutors = FrontEndNode.getNearestTutors(null,
+                example.getLongitude(), example.getLatitude());
+
     }
 
 

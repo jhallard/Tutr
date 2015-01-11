@@ -20,7 +20,7 @@
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/listView"
+        android:id="@+id/TUTORS"
         android:layout_below="@+id/NEARBYTUTORS"
         android:layout_alignEnd="@+id/FIND_TUTORS"
         android:clickable="false" />
