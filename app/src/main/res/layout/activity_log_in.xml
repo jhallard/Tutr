@@ -16,7 +16,8 @@ android:height="@dimen/abc_action_bar_default_height_material"
 android:hint="Email Address"
     android:layout_alignParentTop="true"
     android:layout_alignParentStart="true"
-    android:layout_alignEnd="@+id/PASSWORD" />
+    android:layout_alignEnd="@+id/PASSWORD"
+    android:autoText="false" />
 
 <EditText
 android:layout_width="wrap_content"

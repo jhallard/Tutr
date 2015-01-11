@@ -1,5 +1,6 @@
 package com.ucsc.teamtutor.tutr.UI;
 
+import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -26,13 +27,24 @@ public class LogIn extends ActionBarActivity {
                 //Pass in login data to check
                 EditText emailField = (EditText) findViewById(R.id.EMAIL);
                 EditText passwordField = (EditText) findViewById(R.id.PASSWORD);
-                String Email = emailField.getText().toString();
-                String Password = passwordField.getText().toString();
-                if(LogInVerification.checkSignIn(Email, Password)) {
+                emailField.setBackgroundColor(Color.parseColor("@color/teal"));
+                passwordField.setBackgroundColor(Color.parseColor("@color/teal"));
+                String email = emailField.getText().toString();
+                String password = passwordField.getText().toString();
+                int signInSuccess = LogInVerification.checkSignIn(email, password);
+                if(signInSuccess == 0) {
                     //BE SURE TO SIGN THEM IN SOMEWHERE
                     Intent toHome = new Intent(LogIn.this, HomeActivityTutr.class);
                     LogIn.this.startActivity(toHome);
                     finish();
+                } else {
+                    //MAKE EMAIL FIELD RED
+                    if (signInSuccess == 1 || signInSuccess == 2)
+                        emailField.setBackgroundColor(Color.parseColor("@color/red"));
+                    else //MAKE PASSWORD FIELD RED
+                        if (signInSuccess == 3) {
+                            passwordField.setBackgroundColor(Color.parseColor("@color/red"));
+                        }
                 }
             }
         });

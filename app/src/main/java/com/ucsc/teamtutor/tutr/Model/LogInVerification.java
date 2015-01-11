@@ -6,8 +6,19 @@ package com.ucsc.teamtutor.tutr.Model;
  */
 public class LogInVerification {
 
-    public static boolean checkSignIn(String email, String password){
-        if (!validEmail(email)) return false;
+    /**
+     * The only method the LogIn java class should really call to access the DB to ensure login
+     * success.  Returned ints correspond to result.
+     * 0: success
+     * 1: invalid e-mail format
+     * 2: e-mail not found
+     * 3: password incorrect
+     * @param email
+     * @param password
+     * @return
+     */
+    public static int checkSignIn(String email, String password){
+        if (!validEmail(email)) return 1;
         return passInEmailInfo(email, password);
     }
 
@@ -31,8 +42,8 @@ public class LogInVerification {
         return true;
     }
 
-    static boolean passInEmailInfo(String email, String password){
+    private static int passInEmailInfo(String email, String password){
         //dummy function until DB is up
-        return true;
+        return 0;
     }
 }
