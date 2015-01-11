@@ -1,14 +1,16 @@
-package com.ucsc.teamtutor.tutrappengine;
-
+import com.google.appengine.api.datastore.DatastoreService;
+import com.google.appengine.api.datastore.DatastoreServiceFactory;
 import java.util.Arrays;
 import java.util.List;
 
+package com.ucsc.teamtutor.tutrappengine;
+package com.ucsc.teamtutor.tutr;
 /**
  * Created by Alec Reid on 1/10/2015.
  */
 public class DataBaseEngine {
-
-    List<String> GetSubjects()
+    private List<String> subjectList;
+    DataBaseEngine()
     {
         String[] subjectArray = {"Anthropology","Art","Art History",
                 "Astronomy","Astrophysics","Biology",
@@ -34,6 +36,9 @@ public class DataBaseEngine {
         Arrays.sort(subjectArray);
 
         List<String> subjectList = Arrays.asList(subjectArray);
+    }
+    List<String> GetSubjects()
+    {
 
         return subjectList;
     }
@@ -42,7 +47,21 @@ public class DataBaseEngine {
         return true;
     }
 
-    //Function to give APP a GO or NO GO to login to the APP
-    //Create
+    boolean VerifyStudentLogin(Student student)
+    {
+
+        return true;
+    }
+
+    boolean CreateStudent()
+    {
+
+        return true;
+    }
+    boolean CreateStudent(Student student)
+    {
+        return true;
+    }
+
 
 }
