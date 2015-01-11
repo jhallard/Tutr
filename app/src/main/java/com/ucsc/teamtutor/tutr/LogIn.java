@@ -15,6 +15,7 @@ import android.os.Build;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.EditText;
+import android.content.Intent;
 
 public class LogIn extends ActionBarActivity {
 
@@ -39,7 +40,9 @@ public class LogIn extends ActionBarActivity {
         Button signUp = (Button) findViewById(R.id.SIGNUP);
         signUp.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
+                Intent toSignUp = new Intent(LogIn.this, SignUp.class);
+                LogIn.this.startActivity(toSignUp);
+                finish();
             }
         });
 
