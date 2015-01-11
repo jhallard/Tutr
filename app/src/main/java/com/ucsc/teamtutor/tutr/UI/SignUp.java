@@ -54,23 +54,25 @@ public class SignUp extends ActionBarActivity {
                 //I can't use @color/<color> resources, they don't work with parseColor, but:
                 //fa0012 is red and 009688 is teal (default).
                 else {
+                    int red = Color.parseColor("#fa0012");
+                    int teal = Color.parseColor("#009688");
                     if (name.length() == 0){
                         //No name entered in field
-                        nameField.setBackgroundColor((Color.parseColor("#fa0012")));
-                    } else nameField.setBackgroundColor((Color.parseColor("#009688")));
+                        nameField.setBackgroundColor(red);
+                    } else nameField.setBackgroundColor(teal);
                     if (!emailValidity){
                         //Invalid email
-                        emailField.setBackgroundColor((Color.parseColor("#fa0012")));
-                    } else emailField.setBackgroundColor((Color.parseColor("#009688")));
+                        emailField.setBackgroundColor(red);
+                    } else emailField.setBackgroundColor(teal);
                     if (password.length() == 0){
                         //No password entered
-                        passwordField.setBackgroundColor((Color.parseColor("#fa0012")));
-                    } else passwordField.setBackgroundColor((Color.parseColor("#009688")));
-                    if (password.compareTo(confirmPassword) != 0){
+                        passwordField.setBackgroundColor(red);
+                    } else passwordField.setBackgroundColor(teal);
+                    if (password.compareTo(confirmPassword) != 0) {
                         //Confirmation password does not match password entry
-                        confirmPasswordField.setBackgroundColor((Color.parseColor("#fa0012")));
+                        confirmPasswordField.setBackgroundColor(red);
                     }
-                    else confirmPasswordField.setBackgroundColor((Color.parseColor("#009688")));
+                    else confirmPasswordField.setBackgroundColor(teal);
                 }
             }
         });

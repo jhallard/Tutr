@@ -42,15 +42,17 @@ public class LogIn extends ActionBarActivity {
                     //a runtime error occurs.  As well, I make the other teal, in case the user
                     //fixes a mistake but makes a new one, they don't remain red after they have
                     //been fixed.
+                    int red = Color.parseColor("#fa0012");
+                    int teal = Color.parseColor("#009688");
                     //MAKE EMAIL FIELD RED
                     if (signInSuccess == 1 || signInSuccess == 2) {
-                        emailField.setBackgroundColor(Color.parseColor("#fa0012"));
-                        passwordField.setBackgroundColor(Color.parseColor("#009688"));
+                        emailField.setBackgroundColor(red);
+                        passwordField.setBackgroundColor(teal);
                     }
                     //MAKE PASSWORD FIELD RED
                     else if (signInSuccess == 3) {
-                            passwordField.setBackgroundColor(Color.parseColor("#fa0012"));
-                        emailField.setBackgroundColor(Color.parseColor("#009688"));
+                        passwordField.setBackgroundColor(red);
+                        emailField.setBackgroundColor(teal);
                     }
                 }
             }
