@@ -5,76 +5,91 @@ package com.ucsc.teamtutor.tutrappengine.Model; /**
 import java.util.ArrayList;
 
 public class Member {
+    /*SEAN IF YOU READ THIS:
+    I changed the code to more accurately reflect the way a class should be made.  Encapsulated
+      variables, getters and setters.
+    I deleted the password variable because we are storing that server side (security).
+    I deleted the skype variable because we have not made a prompt in any part of the app for that
+      and don't have time to input one.
+    I commented out friends and interacted.  Friends is a difficult thing to make and something
+      which we have not anything to do with (or the time to make anything to do with).
+      Interactions, as I learned from HappyTraveler is something that's actually very difficult
+      to measure, not to mention we also have not done anything with it.  However, I will keep it
+      there just in case.
+    When the user logs in, the server creates and sends back a student/tutor object.  It's when
+      the user logs out that said object is destroyed.
+    I'm sorry, it's just a time thing.
+     */
     //variables
-    public String name;
-    public String email; //this will also be login name
-    public String phone;
-    public String skype;
-    public String password;
-    public double latitude;
-    public double longitude;
-    public String bio = ""; //avoid null pointer exception
+    private String name;
+    private String email; //this will also be login name
+    private String phone;
+    private double longitude; //can't use long...
+    private double latitude;
+    private String bio = ""; //avoid null pointer exception
+    /*
+
     private ArrayList<Member> friends = new ArrayList<>(0); //contains friends of this member
     private ArrayList<Interaction> interacted = new ArrayList<>(0);
-
+    */
     //Constructor
     //2 since skype is optional during creation
     public Member() { //because android excepts a default constructor to be written out....
-        super();
         name = "";
         email = "";
-        password = "";
         phone = "";
-        skype = ""; //we don't like null pointer exceptions do we?
-        latitude = 0.0;
-        longitude = 0.0;
     }
 
-    public Member(String na, String em, String pass, String ph) {
+    public Member(String na, String em, String ph) {
         name = na;
         email = em;
-        password = pass;
         phone = ph;
-        skype = ""; //we don't like null pointer exceptions do we?
-        latitude = 0.0;
-        longitude = 0.0;
-    }
-
-    public Member(String na, String em, String pass, String sk, String ph) {
-        name = na;
-        email = em;
-        password = pass;
-        skype = sk;
-        phone = ph;
-        latitude = 0.0;
-        longitude = 0.0;
     }
 
     //Methods
-    public void changeEmail(String newEmail) {
+    //getters
+    public String getName() {return name;}
+
+    public String getPhone() {return phone;}
+
+    public String getEmail() {return email;}
+
+    public double getLongitude() {return longitude;}
+
+    public double getLatitude() {return latitude;}
+
+    public String getBio() {return bio;}
+/*
+    public ArrayList<Member> getFriends() {return friends;}
+    //confusing: getInteracted to get the arraylist, or Sean's getInteractions for a specific
+    //member
+    public ArrayList<Interaction> getInteracted() {return interacted;}
+*/
+
+    //setters
+    public void setName(String newName){
+        name = newName;
+    }
+    public void setEmail(String newEmail) {
         email = newEmail;
     }
 
-    public void changePassword(String newPassword) {
-        password = newPassword;
-    }
-
-    public void changeSkype(String newSkype) {
-        skype = newSkype;
-    }
-
-    public void changePhone(String newPhone) {
+    public void setPhone(String newPhone) {
         phone = newPhone;
     }
 
-    public void changeBio(String newBio) {
+    public void setBio(String newBio) {
         bio = newBio;
     }
 
-    public void changeImage() {
+    public boolean setLongitude(double l) {longitude = l; return true;}
+
+    public boolean setLatitude(double l) {latitude = l; return true;}
+
+    public void setImage() {
         //NEED TO IMPLEMENT THIS!@!@!@!@!@!
     }
-
+/*
     public void addFriend(Member newFriend) {
         //should probably implement a request system!@!@!@!
         if (!friends.contains(newFriend)) { //prevents duplicate friending
@@ -83,9 +98,10 @@ public class Member {
     }
 
     public void addInteraction(Member person) {
-        //ok scary looking loop here to check if the person has interacted with the other person yet
-        //look at com.ucsc.teamtutor.tutr.Model.Interaction.java to see how the com.ucsc.teamtutor.tutr.Model.Interaction object works
-        //interacted is the name of the array
+        //ok scary looking loop here to check if the person has interacted with the other person
+        // yet look at com.ucsc.teamtutor.tutr.Model.Interaction.java to see how the
+        // com.ucsc.teamtutor.tutr.Model.Interaction object works interacted is the name of the
+        // array
         for (int i = 0; i < interacted.size(); i++) {
             if (interacted.get(i).person.equals(person)) {
                 Interaction updated = interacted.get(i);
@@ -108,4 +124,5 @@ public class Member {
         //if we didn't find the person in the loop then we have never seen them
         return 0;
     }
+    */
 }
