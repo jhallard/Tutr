@@ -13,6 +13,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
 import android.widget.ListView;
+import android.widget.ArrayAdapter;
+import android.content.Context;
+import android.widget.TextView;
 
 import com.ucsc.teamtutor.tutr.Model.FrontEndNode;
 import com.ucsc.teamtutor.tutr.Model.Student;
@@ -35,9 +38,29 @@ public class HomeActivityTutr extends ActionBarActivity {
         ListView tutorList = (ListView) findViewById (R.id.TUTORS);
         ArrayList<Tutor> tutors = FrontEndNode.getNearestTutors(null,
                 example.getLongitude(), example.getLatitude());
-
+        TutorAdapter adapter = new TutorAdapter(this, tutors);
+        tutorList.setAdapter(adapter);
+        adapter.addAll(tutors);
     }
 
+    public class TutorAdapter extends ArrayAdapter<Tutor>{
+        public TutorAdapter (Context context, ArrayList<Tutor> tutors){
+            super(context, 0, tutors);
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            Tutor tutor = getItem(position);
+            if (convertView == null) {
+                convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
+            }
+            TextView name = (TextView) convertView.findViewById(R.id.firstLine);
+            TextView subjects = (TextView) convertView.findViewById(R.id.secondLine);
+            name.setText(tutor.getName());
+            subjects.setText(tutor.getTopThreeString());
+            return convertView;
+        }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

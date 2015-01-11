@@ -83,6 +83,17 @@ public class Tutor extends Member {
         }
     }
 
+    //This function returns the Top three classes as a string.
+    public String getTopThreeString(){
+        ArrayList<Qualification> topThree = getTopThree();
+        String subjects = "";
+        for (int i = 0; i < topThree.size(); ++i){
+            subjects += topThree.get(i).subject;
+            if (i < topThree.size() - 1) subjects += ", ";
+        }
+        return subjects;
+    }
+
     //This function gets a short ArrayList of the top 3 subjects, or less if the tutor has less
     //than that.
     public ArrayList<Qualification> getTopThree(){
