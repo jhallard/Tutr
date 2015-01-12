@@ -42,11 +42,12 @@ public class BackEndNodeEndpoint {
      * @param student The id of the student to update.
      * @return bool, true if we could update
      */
-    @ApiMethod(name = "updateStudent")
-    public static boolean updateStudent(@Named("student")Student student){
-        // make sure that student exists in the database
-        boolean success = false;
-        return success;
+    @ApiMethod(name = "updateStudent", path="updatestudent")
+    public ConfirmValue updateStudent(Student student){
+        ConfirmValue ret = new ConfirmValue();
+        ret.setData(true);
+
+        return ret;
     }
 
     /**
@@ -102,7 +103,7 @@ public class BackEndNodeEndpoint {
      * @param updated The id of the tutor to delete.
      * @return bool, true if we could update
      */
-    @ApiMethod(name = "updateTutor")
+    @ApiMethod(name = "updateTutor", path = "updatetutor")
     public ConfirmValue updateTutor(Tutor updated){
         ConfirmValue ret = new ConfirmValue();
         ret.setData(false);

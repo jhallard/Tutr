@@ -1,0 +1,400 @@
+{
+ "kind": "discovery#restDescription",
+ "etag": "\"c05bU6zpvXPOpQakG5gG3IOJh8Y/kvW6GrUe5DkUxe0HAr23fg2__rM\"",
+ "discoveryVersion": "v1",
+ "id": "backEndNodeApi:v1",
+ "name": "backEndNodeApi",
+ "version": "v1",
+ "description": "This is an API",
+ "ownerDomain": "tutrappengine.teamtutor.ucsc.com",
+ "ownerName": "tutrappengine.teamtutor.ucsc.com",
+ "icons": {
+  "x16": "http://www.google.com/images/icons/product/search-16.gif",
+  "x32": "http://www.google.com/images/icons/product/search-32.gif"
+ },
+ "protocol": "rest",
+ "baseUrl": "https://myApplicationId.appspot.com/_ah/api/backEndNodeApi/v1/",
+ "basePath": "/_ah/api/backEndNodeApi/v1/",
+ "rootUrl": "https://myApplicationId.appspot.com/_ah/api/",
+ "servicePath": "backEndNodeApi/v1/",
+ "batchPath": "batch",
+ "parameters": {
+  "alt": {
+   "type": "string",
+   "description": "Data format for the response.",
+   "default": "json",
+   "enum": [
+    "json"
+   ],
+   "enumDescriptions": [
+    "Responses with Content-Type of application/json"
+   ],
+   "location": "query"
+  },
+  "fields": {
+   "type": "string",
+   "description": "Selector specifying which fields to include in a partial response.",
+   "location": "query"
+  },
+  "key": {
+   "type": "string",
+   "description": "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.",
+   "location": "query"
+  },
+  "oauth_token": {
+   "type": "string",
+   "description": "OAuth 2.0 token for the current user.",
+   "location": "query"
+  },
+  "prettyPrint": {
+   "type": "boolean",
+   "description": "Returns response with indentations and line breaks.",
+   "default": "true",
+   "location": "query"
+  },
+  "quotaUser": {
+   "type": "string",
+   "description": "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.",
+   "location": "query"
+  },
+  "userIp": {
+   "type": "string",
+   "description": "IP address of the site where the request originates. Use this if you want to enforce per-user limits.",
+   "location": "query"
+  }
+ },
+ "auth": {
+  "oauth2": {
+   "scopes": {
+    "https://www.googleapis.com/auth/userinfo.email": {
+     "description": "View your email address"
+    }
+   }
+  }
+ },
+ "schemas": {
+  "ConfirmValue": {
+   "id": "ConfirmValue",
+   "type": "object",
+   "properties": {
+    "data": {
+     "type": "boolean"
+    }
+   }
+  },
+  "LoginConfirmer": {
+   "id": "LoginConfirmer",
+   "type": "object",
+   "properties": {
+    "code": {
+     "type": "integer",
+     "format": "int32"
+    }
+   }
+  },
+  "Qualification": {
+   "id": "Qualification",
+   "type": "object",
+   "properties": {
+    "skill": {
+     "type": "number",
+     "format": "double"
+    },
+    "subject": {
+     "type": "string"
+    }
+   }
+  },
+  "Student": {
+   "id": "Student",
+   "type": "object",
+   "properties": {
+    "bio": {
+     "type": "string"
+    },
+    "email": {
+     "type": "string"
+    },
+    "latitude": {
+     "type": "number",
+     "format": "double"
+    },
+    "longitude": {
+     "type": "number",
+     "format": "double"
+    },
+    "name": {
+     "type": "string"
+    },
+    "phone": {
+     "type": "string"
+    }
+   }
+  },
+  "Tutor": {
+   "id": "Tutor",
+   "type": "object",
+   "properties": {
+    "bio": {
+     "type": "string"
+    },
+    "email": {
+     "type": "string"
+    },
+    "hourlyRate": {
+     "type": "number",
+     "format": "double"
+    },
+    "latitude": {
+     "type": "number",
+     "format": "double"
+    },
+    "longitude": {
+     "type": "number",
+     "format": "double"
+    },
+    "name": {
+     "type": "string"
+    },
+    "phone": {
+     "type": "string"
+    },
+    "price": {
+     "type": "number",
+     "format": "double"
+    },
+    "qualifications": {
+     "type": "array",
+     "items": {
+      "$ref": "Qualification"
+     }
+    }
+   }
+  },
+  "TutorCollection": {
+   "id": "TutorCollection",
+   "type": "object",
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "Tutor"
+     }
+    }
+   }
+  }
+ },
+ "methods": {
+  "createStudent": {
+   "id": "backEndNodeApi.createStudent",
+   "path": "backendnode/{pw}",
+   "httpMethod": "POST",
+   "parameters": {
+    "pw": {
+     "type": "string",
+     "required": true,
+     "location": "path"
+    }
+   },
+   "parameterOrder": [
+    "pw"
+   ],
+   "request": {
+    "$ref": "Student",
+    "parameterName": "resource"
+   },
+   "response": {
+    "$ref": "ConfirmValue"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "createTutor": {
+   "id": "backEndNodeApi.createTutor",
+   "path": "create_tutor",
+   "httpMethod": "POST",
+   "parameters": {
+    "pw": {
+     "type": "string",
+     "required": true,
+     "location": "query"
+    }
+   },
+   "parameterOrder": [
+    "pw"
+   ],
+   "request": {
+    "$ref": "Tutor",
+    "parameterName": "resource"
+   },
+   "response": {
+    "$ref": "ConfirmValue"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "deleteStudent": {
+   "id": "backEndNodeApi.deleteStudent",
+   "path": "backendnode",
+   "httpMethod": "DELETE",
+   "request": {
+    "$ref": "Student",
+    "parameterName": "resource"
+   },
+   "response": {
+    "$ref": "ConfirmValue"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "deleteTutor": {
+   "id": "backEndNodeApi.deleteTutor",
+   "path": "deletetutor",
+   "httpMethod": "DELETE",
+   "request": {
+    "$ref": "Tutor",
+    "parameterName": "resource"
+   },
+   "response": {
+    "$ref": "ConfirmValue"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "getNearestTutors": {
+   "id": "backEndNodeApi.getNearestTutors",
+   "path": "backendnode/{subject}/{longitude}/{latitude}",
+   "httpMethod": "GET",
+   "parameters": {
+    "latitude": {
+     "type": "number",
+     "required": true,
+     "format": "double",
+     "location": "path"
+    },
+    "longitude": {
+     "type": "number",
+     "required": true,
+     "format": "double",
+     "location": "path"
+    },
+    "subject": {
+     "type": "string",
+     "required": true,
+     "location": "path"
+    }
+   },
+   "parameterOrder": [
+    "subject",
+    "longitude",
+    "latitude"
+   ],
+   "response": {
+    "$ref": "TutorCollection"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "tutorLogIn": {
+   "id": "backEndNodeApi.tutorLogIn",
+   "path": "backendnode/{email}/{password}",
+   "httpMethod": "POST",
+   "parameters": {
+    "email": {
+     "type": "string",
+     "required": true,
+     "location": "path"
+    },
+    "password": {
+     "type": "string",
+     "required": true,
+     "location": "path"
+    }
+   },
+   "parameterOrder": [
+    "email",
+    "password"
+   ],
+   "response": {
+    "$ref": "Tutor"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "updateTutor": {
+   "id": "backEndNodeApi.updateTutor",
+   "path": "backendnode",
+   "httpMethod": "PUT",
+   "request": {
+    "$ref": "Tutor",
+    "parameterName": "resource"
+   },
+   "response": {
+    "$ref": "ConfirmValue"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "userLogIn": {
+   "id": "backEndNodeApi.userLogIn",
+   "path": "user_log_in",
+   "httpMethod": "POST",
+   "parameters": {
+    "email": {
+     "type": "string",
+     "required": true,
+     "location": "query"
+    },
+    "password": {
+     "type": "string",
+     "required": true,
+     "location": "query"
+    }
+   },
+   "parameterOrder": [
+    "email",
+    "password"
+   ],
+   "response": {
+    "$ref": "Student"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "verifyUserInfo": {
+   "id": "backEndNodeApi.verifyUserInfo",
+   "path": "verify_user_info",
+   "httpMethod": "POST",
+   "parameters": {
+    "email": {
+     "type": "string",
+     "required": true,
+     "location": "query"
+    },
+    "password": {
+     "type": "string",
+     "required": true,
+     "location": "query"
+    }
+   },
+   "parameterOrder": [
+    "email",
+    "password"
+   ],
+   "response": {
+    "$ref": "LoginConfirmer"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  }
+ }
+}

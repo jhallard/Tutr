@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.content.Intent;
 
+import com.ucsc.teamtutor.tutr.Model.FrontEndNode;
 import com.ucsc.teamtutor.tutr.Model.LoginVerification;
 import com.ucsc.teamtutor.tutr.R;
 import com.ucsc.teamtutor.tutrappengine.backEndNodeApi.model.*;
@@ -19,6 +20,7 @@ import com.ucsc.teamtutor.tutrappengine.backEndNodeApi.model.*;
 public class LogIn extends ActionBarActivity {
 
     private LoginVerification login_checker = new LoginVerification();
+    private FrontEndNode front_node = new FrontEndNode();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +40,33 @@ public class LogIn extends ActionBarActivity {
                 int signInSuccess = login_checker.checkSignIn(email, password);
                 if(signInSuccess == 0) {
                     //BE SURE TO SIGN THEM IN SOMEWHERE
-                    Intent toHome = new Intent(LogIn.this, HomeActivityTutr.class);
-                    LogIn.this.startActivity(toHome);
-                    finish();
+                    signInSuccess = front_node.verifyUserInfo(email, password);
+                    if(signInSuccess == 0) { // the sign-in is a valid student
+                        Student user = front_node.StudentLogIn(email, password);
+                        Intent toHome = new Intent(LogIn.this, HomeActivityTutr.class);
+                        LogIn.this.startActivity(toHome);
+                        finish();
+                    }
+                    else if(signInSuccess == 1) { // the sign-in is a valid tutor
+                        Tutor user = front_node.TutorLogIn(email, password);
+                        Intent toHome = new Intent(LogIn.this, HomeActivityTutr.class);
+                        LogIn.this.startActivity(toHome);
+                        finish();
+                    }
+                    else {
+                        int red = Color.parseColor("#fa0012");
+                        int teal = Color.parseColor("#009688");
+                        //MAKE EMAIL FIELD RED
+                        if (signInSuccess == 1 || signInSuccess == 2) {
+                            emailField.setBackgroundColor(red);
+                            passwordField.setBackgroundColor(teal);
+                        }
+                        //MAKE PASSWORD FIELD RED
+                        else if (signInSuccess == 3) {
+                            passwordField.setBackgroundColor(red);
+                            emailField.setBackgroundColor(teal);
+                        }
+                    }
                 } else {
                     //I couldn't use @color/<color>, I have to use hex values.  Otherwise
                     //a runtime error occurs.  As well, I make the other teal, in case the user

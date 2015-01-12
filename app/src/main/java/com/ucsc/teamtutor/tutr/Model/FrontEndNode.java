@@ -30,60 +30,83 @@ public class FrontEndNode {
             myApiService = builder.build();
         }
     }
+    
     public boolean updateStudent(Student updated){
-
+        return true;
+    }
+    
+    public boolean createStudent(Student updated, String password){
         try {
-            Tutor tut = new Tutor();
-            myApiService.updateTutor(tut).execute().getData(); 
+            myApiService.createStudent(password, updated).execute();
         }catch(IOException e) {
-            int x = 0;
+            return false;
         }
         return true;
     }
-    public boolean createStudent(Student updated, String password){
-//        myApiService.createStudent(updated, password).execute().getData();
-        boolean success = false;
-        return success;
-    }
+    
     public boolean deleteStudent(Student updated){
         // see if the user exists in the database, if so delete them
         boolean success = false;
         return success;
     }
     public boolean updateTutor(Tutor updated){
-        // make sure that student exists in the database
-        boolean success = false;
-        return success;
+        try {
+            return myApiService.updateTutor(updated).execute().getData();
+        }catch(IOException e) {
+            return false;
+        }
     }
-    public boolean createTutor(Tutor updated){
-        // make sure that the new student doesn't exist in the database,
-        // then add the student and return true
-        boolean success = false;
-        return success;
+    public boolean createTutor(Tutor updated, String pw){
+        try {
+            myApiService.createTutor(pw, updated).execute();
+        }catch(IOException e) {
+            return false;
+        }
+        return true;
     }
     public boolean deleteTutor(Tutor updated){
         // see if the user exists in the database, if so delete them
         boolean success = false;
         return success;
     }
-    public ArrayList<Tutor> getNearestTutors(String subject, double longitude, double latitude){
+    public TutorCollection getNearestTutors(String subject, double longitude, double latitude){
         //TODO find nearby tutors using gps finder
-        ArrayList<Tutor> nearByTutors = null;
+        TutorCollection nearByTutors = null;
+        try {
+            nearByTutors = myApiService.getNearestTutors(subject, longitude, latitude).execute();
+        }catch(Exception e) {
+            return nearByTutors;
+        }
         return nearByTutors;
     }
     public int verifyUserInfo(String username, String password){
-        int validInfo = 0; //0 = success, 1 = password fail, 2 = username fail
-        //TODO pull data from database and compare to data
-        return validInfo;
+        LoginConfirmer confirmer = null;
+        try {
+            confirmer = (myApiService.verifyUserInfo(username, password).execute());
+        }catch(Exception e) {
+            confirmer = new LoginConfirmer();
+            confirmer.setCode(3);
+        }
+        return confirmer.getCode();
     }
 
     public Student StudentLogIn(String username, String password) {
         Student student = null;
+        try {
+            student = myApiService.userLogIn(username, password).execute();
+        }catch(Exception e) {
+            student = null;
+        }
         return student;
     }
 
     public Tutor TutorLogIn(String username, String password) {
         Tutor tutor = null;
+        try {
+            tutor = myApiService.tutorLogIn(username, password).execute();
+        }catch(Exception e) {
+            tutor = null;
+        }
         return tutor;
     }
 }
