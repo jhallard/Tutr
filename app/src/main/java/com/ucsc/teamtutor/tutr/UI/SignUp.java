@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.ucsc.teamtutor.tutr.Model.FrontEndNode;
 import com.ucsc.teamtutor.tutr.Model.LoginVerification;
 import com.ucsc.teamtutor.tutr.R;
 import com.ucsc.teamtutor.tutrappengine.backEndNodeApi.model.*;
@@ -19,7 +20,8 @@ import com.ucsc.teamtutor.tutrappengine.backEndNodeApi.model.*;
 public class SignUp extends ActionBarActivity {
 
     private LoginVerification login_checker = new LoginVerification();
-
+    private FrontEndNode front_node = new FrontEndNode();
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,11 +48,18 @@ public class SignUp extends ActionBarActivity {
                         && password.length() > 0
                         && password.compareTo(confirmPassword) == 0
                         && name.length() > 0) {
-                    //TODO CREATE ACCOUNT HERE!@!@!@!@!
-                    //BE SURE TO SIGN THEM IN SOMEWHERE
-                    Intent toHome = new Intent(SignUp.this, HomeActivityTutr.class);
-                    SignUp.this.startActivity(toHome);
-                    finish();
+                    
+                    Student new_student = new Student();
+                    new_student.setName(name);
+                    new_student.setEmail(email);
+                    boolean signIn = front_node.createStudent(new_student, password);
+                    
+                    if(signIn) {
+                        Student user = front_node.StudentLogIn(email, password);
+                        Intent toHome = new Intent(SignUp.this, HomeActivityTutr.class);
+                        SignUp.this.startActivity(toHome);
+                        finish();
+                    }
                 }
 
                 //Now check each instance it could have gone wrong

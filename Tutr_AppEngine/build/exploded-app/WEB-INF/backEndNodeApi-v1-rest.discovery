@@ -1,6 +1,6 @@
 {
  "kind": "discovery#restDescription",
- "etag": "\"c05bU6zpvXPOpQakG5gG3IOJh8Y/kvW6GrUe5DkUxe0HAr23fg2__rM\"",
+ "etag": "\"c05bU6zpvXPOpQakG5gG3IOJh8Y/sBrSVwqErpmK87eTo5_cFC4TG5c\"",
  "discoveryVersion": "v1",
  "id": "backEndNodeApi:v1",
  "name": "backEndNodeApi",
@@ -327,9 +327,24 @@
     "https://www.googleapis.com/auth/userinfo.email"
    ]
   },
+  "updateStudent": {
+   "id": "backEndNodeApi.updateStudent",
+   "path": "updatestudent",
+   "httpMethod": "PUT",
+   "request": {
+    "$ref": "Student",
+    "parameterName": "resource"
+   },
+   "response": {
+    "$ref": "ConfirmValue"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
   "updateTutor": {
    "id": "backEndNodeApi.updateTutor",
-   "path": "backendnode",
+   "path": "updatetutor",
    "httpMethod": "PUT",
    "request": {
     "$ref": "Tutor",

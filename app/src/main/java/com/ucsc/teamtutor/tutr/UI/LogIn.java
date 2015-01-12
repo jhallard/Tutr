@@ -57,7 +57,7 @@ public class LogIn extends ActionBarActivity {
                         int red = Color.parseColor("#fa0012");
                         int teal = Color.parseColor("#009688");
                         //MAKE EMAIL FIELD RED
-                        if (signInSuccess == 1 || signInSuccess == 2) {
+                        if (signInSuccess == 2) {
                             emailField.setBackgroundColor(red);
                             passwordField.setBackgroundColor(teal);
                         }

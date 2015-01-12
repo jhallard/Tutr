@@ -1,5 +1,8 @@
 package com.ucsc.teamtutor.tutr.Model;
 
+import android.content.Context;
+import android.widget.Toast;
+
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
@@ -38,7 +41,7 @@ public class FrontEndNode {
     public boolean createStudent(Student updated, String password){
         try {
             myApiService.createStudent(password, updated).execute();
-        }catch(IOException e) {
+        }catch(Exception e) {
             return false;
         }
         return true;

@@ -1,6 +1,6 @@
 {
  "kind": "discovery#rpcDescription",
- "etag": "\"c05bU6zpvXPOpQakG5gG3IOJh8Y/kvW6GrUe5DkUxe0HAr23fg2__rM\"",
+ "etag": "\"c05bU6zpvXPOpQakG5gG3IOJh8Y/sBrSVwqErpmK87eTo5_cFC4TG5c\"",
  "discoveryVersion": "v1",
  "id": "backEndNodeApi:v1",
  "name": "backEndNodeApi",
@@ -310,6 +310,23 @@
    ],
    "returns": {
     "$ref": "Tutor"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "backEndNodeApi.updateStudent": {
+   "id": "backEndNodeApi.updateStudent",
+   "parameters": {
+    "resource": {
+     "$ref": "Student"
+    }
+   },
+   "parameterOrder": [
+    "resource"
+   ],
+   "returns": {
+    "$ref": "ConfirmValue"
    },
    "scopes": [
     "https://www.googleapis.com/auth/userinfo.email"
