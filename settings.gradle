@@ -1,1 +1,1 @@
-include ':app', ':Tutr_AppEngine'
+include ':app', ':Tutr_AppEngine', ':libtutr'

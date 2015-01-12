@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/Tutr.iml" filepath="$PROJECT_DIR$/Tutr.iml" />
       <module fileurl="file://$PROJECT_DIR$/Tutr_AppEngine/Tutr_AppEngine.iml" filepath="$PROJECT_DIR$/Tutr_AppEngine/Tutr_AppEngine.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libtutr/libtutr.iml" filepath="$PROJECT_DIR$/libtutr/libtutr.iml" />
     </modules>
   </component>
 </project>

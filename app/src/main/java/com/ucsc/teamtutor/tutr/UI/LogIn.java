@@ -10,11 +10,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.content.Intent;
 
-import com.ucsc.teamtutor.tutr.Model.LogInVerification;
+import com.ucsc.teamtutor.tutr.Model.LoginVerification;
 import com.ucsc.teamtutor.tutr.R;
+import com.ucsc.teamtutor.tutrappengine.backEndNodeApi.model.*;
+
 
 
 public class LogIn extends ActionBarActivity {
+
+    private LoginVerification login_checker = new LoginVerification();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +35,7 @@ public class LogIn extends ActionBarActivity {
 //                passwordField.setBackgroundColor(Color.parseColor("@color/teal"));
                 String email = emailField.getText().toString();
                 String password = passwordField.getText().toString();
-                int signInSuccess = LogInVerification.checkSignIn(email, password);
+                int signInSuccess = login_checker.checkSignIn(email, password);
                 if(signInSuccess == 0) {
                     //BE SURE TO SIGN THEM IN SOMEWHERE
                     Intent toHome = new Intent(LogIn.this, HomeActivityTutr.class);

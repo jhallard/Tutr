@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/Tutr_AppEngine" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/libtutr" />
           </set>
         </option>
       </GradleProjectSettings>

@@ -6,6 +6,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.ucsc.teamtutor.tutr.R;
+import com.ucsc.teamtutor.tutrappengine.backEndNodeApi.model.*;
+
 
 
 public class ProfilePage extends ActionBarActivity {

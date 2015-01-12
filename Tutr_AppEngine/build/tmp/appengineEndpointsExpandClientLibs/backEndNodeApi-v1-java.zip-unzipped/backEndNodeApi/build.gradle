@@ -2,7 +2,7 @@ apply plugin: 'java'
 apply plugin: 'maven'
 
 
-group = 'com.ucsc.teamtutor.tutrappengine.model'
+group = 'com.ucsc.teamtutor.tutrappengine'
 archivesBaseName = 'backEndNodeApi'
 version = 'v1-1.19.1-SNAPSHOT'
 

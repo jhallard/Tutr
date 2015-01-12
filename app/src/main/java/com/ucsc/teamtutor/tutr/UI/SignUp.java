@@ -10,11 +10,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.ucsc.teamtutor.tutr.Model.LogInVerification;
+import com.ucsc.teamtutor.tutr.Model.LoginVerification;
 import com.ucsc.teamtutor.tutr.R;
+import com.ucsc.teamtutor.tutrappengine.backEndNodeApi.model.*;
+
 
 
 public class SignUp extends ActionBarActivity {
+
+    private LoginVerification login_checker = new LoginVerification();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +38,7 @@ public class SignUp extends ActionBarActivity {
                 String password = passwordField.getText().toString();
                 String confirmPassword = confirmPasswordField.getText().toString();
                 String name = nameField.getText().toString();
-                boolean emailValidity = LogInVerification.validEmail(email);
+                boolean emailValidity = login_checker.validEmail(email);
 
                 //Make sure that 1. email is valid 2. password exists 3. it is equal to confirm
                 //password and 4. there is a name
