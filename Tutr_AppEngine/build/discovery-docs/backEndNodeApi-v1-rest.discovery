@@ -1,6 +1,6 @@
 {
  "kind": "discovery#restDescription",
- "etag": "\"c05bU6zpvXPOpQakG5gG3IOJh8Y/sBrSVwqErpmK87eTo5_cFC4TG5c\"",
+ "etag": "\"c05bU6zpvXPOpQakG5gG3IOJh8Y/tgO0kDFSDmNTtCr6NUGRPWGQZvM\"",
  "discoveryVersion": "v1",
  "id": "backEndNodeApi:v1",
  "name": "backEndNodeApi",
@@ -302,18 +302,18 @@
   },
   "tutorLogIn": {
    "id": "backEndNodeApi.tutorLogIn",
-   "path": "backendnode/{email}/{password}",
-   "httpMethod": "POST",
+   "path": "tutorlogin",
+   "httpMethod": "GET",
    "parameters": {
     "email": {
      "type": "string",
      "required": true,
-     "location": "path"
+     "location": "query"
     },
     "password": {
      "type": "string",
      "required": true,
-     "location": "path"
+     "location": "query"
     }
    },
    "parameterOrder": [
@@ -360,7 +360,7 @@
   "userLogIn": {
    "id": "backEndNodeApi.userLogIn",
    "path": "user_log_in",
-   "httpMethod": "POST",
+   "httpMethod": "GET",
    "parameters": {
     "email": {
      "type": "string",
@@ -387,7 +387,7 @@
   "verifyUserInfo": {
    "id": "backEndNodeApi.verifyUserInfo",
    "path": "verify_user_info",
-   "httpMethod": "POST",
+   "httpMethod": "GET",
    "parameters": {
     "email": {
      "type": "string",

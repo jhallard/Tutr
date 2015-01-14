@@ -1,6 +1,6 @@
 {
  "kind": "discovery#rpcDescription",
- "etag": "\"c05bU6zpvXPOpQakG5gG3IOJh8Y/sBrSVwqErpmK87eTo5_cFC4TG5c\"",
+ "etag": "\"c05bU6zpvXPOpQakG5gG3IOJh8Y/tgO0kDFSDmNTtCr6NUGRPWGQZvM\"",
  "discoveryVersion": "v1",
  "id": "backEndNodeApi:v1",
  "name": "backEndNodeApi",
@@ -294,6 +294,7 @@
   },
   "backEndNodeApi.tutorLogIn": {
    "id": "backEndNodeApi.tutorLogIn",
+   "allowGet": true,
    "parameters": {
     "email": {
      "type": "string",
@@ -351,6 +352,7 @@
   },
   "backEndNodeApi.userLogIn": {
    "id": "backEndNodeApi.userLogIn",
+   "allowGet": true,
    "parameters": {
     "email": {
      "type": "string",
@@ -374,6 +376,7 @@
   },
   "backEndNodeApi.verifyUserInfo": {
    "id": "backEndNodeApi.verifyUserInfo",
+   "allowGet": true,
    "parameters": {
     "email": {
      "type": "string",

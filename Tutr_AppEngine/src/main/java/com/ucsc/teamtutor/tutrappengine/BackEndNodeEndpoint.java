@@ -20,11 +20,14 @@ import java.util.logging.Logger;
 import javax.inject.Named;
 
 /**
- * An endpoint class we are exposing
+ *This EndPoint defines the backend interaction interface for the Tutr app. This API allows a client
+ * instance of the Tutr app to login, sign-up a new user, update a user's information, receive a list
+ * of the best ranked tutors given a series of input parameters (GPS coordinates, subject, etc). The
+ * actual cloud datastore operations will happen in another class, this is merely the public interface.
  */
 @Api(
         name = "backEndNodeApi",
-        version = "v1",
+        version = "v2",
         resource = "backEndNode",
         namespace = @ApiNamespace(
                 ownerDomain = "tutrappengine.teamtutor.ucsc.com",
@@ -117,7 +120,9 @@ public class BackEndNodeEndpoint {
      * @param updated The id of the tutor to delete.
      * @return bool, true if we could update
      */
-    @ApiMethod(name = "createTutor", path="create_tutor")
+    @ApiMethod(name = "createTutor",
+               path="create_tutor",
+               httpMethod = ApiMethod.HttpMethod.POST)
     public ConfirmValue createTutor(Tutor updated, @Named("pw")String pw){
         // make sure that student exists in the database
         DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
@@ -136,7 +141,7 @@ public class BackEndNodeEndpoint {
         }
 
         tutor.setProperty("email", updated.getEmail());
-        tutor.setProperty("fullname", updated.getName());
+        tutor.setProperty("Name", updated.getName());
         tutor.setProperty("joindate", "");
         tutor.setProperty("password", pw);
         datastore.put(tutor);
@@ -206,8 +211,10 @@ public class BackEndNodeEndpoint {
      * @param email the email of the user
      * @param password the pw of the user                                 
      * @return bool, true if we could update
+     * *
+     * * 
      */
-    @ApiMethod(name = "verifyUserInfo", path = "verify_user_info")
+    @ApiMethod(name = "verifyUserInfo", path = "verify_user_info", httpMethod = ApiMethod.HttpMethod.GET)
     public LoginConfirmer verifyUserInfo(@Named("email")String email, @Named("password")String password){
         int validInfo = 2; //0 = student, 1 = tutor, 2 = email fail, 3 = pass fail
         //TODO pull data from database and compare to data
@@ -257,7 +264,7 @@ public class BackEndNodeEndpoint {
      * @param password the pw of the user
      * @return Student object associated with login credentials                
      */
-    @ApiMethod(name = "userLogIn", path = "user_log_in")
+    @ApiMethod(name = "userLogIn", path = "user_log_in", httpMethod = ApiMethod.HttpMethod.GET)
     public Student userLogIn(@Named("email")String email, @Named("password")String password) {
         DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
         Key key = KeyFactory.createKey("Student", email);
@@ -290,7 +297,7 @@ public class BackEndNodeEndpoint {
      * @param password the pw of the user
      * @return Student object associated with login credentials                
      */
-    @ApiMethod(name = "tutorLogIn")
+    @ApiMethod(name = "tutorLogIn", path="tutorlogin", httpMethod = ApiMethod.HttpMethod.GET)
     public Tutor tutorLogIn(@Named("email")String email, @Named("password")String password) {
         DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
         Key key = KeyFactory.createKey("Student", email);

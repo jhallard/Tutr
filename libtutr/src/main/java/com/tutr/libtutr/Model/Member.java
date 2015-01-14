@@ -3,21 +3,6 @@ package com.tutr.libtutr.Model; /**
  */
 
 public class Member {
-    /*SEAN IF YOU READ THIS:
-    I changed the code to more accurately reflect the way a class should be made.  Encapsulated
-      variables, getters and setters.
-    I deleted the password variable because we are storing that server side (security).
-    I deleted the skype variable because we have not made a prompt in any part of the app for that
-      and don't have time to input one.
-    I commented out friends and interacted.  Friends is a difficult thing to make and something
-      which we have not anything to do with (or the time to make anything to do with).
-      Interactions, as I learned from HappyTraveler is something that's actually very difficult
-      to measure, not to mention we also have not done anything with it.  However, I will keep it
-      there just in case.
-    When the user logs in, the server creates and sends back a student/tutor object.  It's when
-      the user logs out that said object is destroyed.
-    I'm sorry, it's just a time thing.
-     */
     //variables
     private String name;
     private String email; //this will also be login name

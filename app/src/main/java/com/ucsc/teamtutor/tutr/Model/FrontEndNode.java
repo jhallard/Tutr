@@ -26,7 +26,7 @@ public class FrontEndNode {
                     .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
                         @Override
                         public void initialize(AbstractGoogleClientRequest<?> abstractGoogleClientRequest) throws IOException {
-                            abstractGoogleClientRequest.setDisableGZipContent(true);
+                            abstractGoogleClientRequest.setDisableGZipContent(false);
                         }
                     });
 
@@ -40,7 +40,7 @@ public class FrontEndNode {
     
     public boolean createStudent(Student updated, String password){
         try {
-            myApiService.createStudent(password, updated).execute();
+            myApiService.createStudent(password, updated).execute().getData();
         }catch(Exception e) {
             return false;
         }
